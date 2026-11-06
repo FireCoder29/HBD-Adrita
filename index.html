@@ -1111,238 +1111,447 @@
         }
 
 
-        /* =========================================
-   IPHONE & MOBILE RESPONSIVE FIX
-   Add this at the VERY END of your CSS
+/* =========================================
+   14. RESPONSIVE DESIGN
+   Optimized for iPhone, Android & tablets
 ========================================= */
 
-        /* Prevent unwanted horizontal scrolling */
-        html,
-        body {
-            width: 100%;
-            max-width: 100%;
-            overflow-x: clip;
-        }
+/* Global mobile safety */
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
 
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-        }
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
-        img,
-        video,
-        iframe {
-            max-width: 100%;
-        }
+img,
+video,
+iframe {
+    max-width: 100%;
+}
 
-        img {
-            height: auto;
-        }
+/* Tablet and smaller screens */
+@media (max-width: 760px) {
 
-        /* Tablet and mobile */
-        @media screen and (max-width: 768px) {
+    .container {
+        width: min(100% - 40px, 560px);
+    }
 
-            html {
-                scroll-behavior: smooth;
-                -webkit-text-size-adjust: 100%;
-            }
+    /* Letter layout */
+    .letter-layout {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
 
-            body {
-                width: 100%;
-                min-width: 320px;
-                overflow-x: clip;
-            }
+    .letter-side {
+        position: static;
+        text-align: center;
+    }
 
-            section,
-            header,
-            footer,
-            main {
-                max-width: 100%;
-            }
+    .letter-side h2 {
+        font-size: clamp(38px, 9vw, 54px);
+        line-height: 1.02;
+    }
 
-            .container,
-            .container-fluid {
-                width: 100%;
-                max-width: 100%;
-                padding-left: 20px;
-                padding-right: 20px;
-            }
+    .letter-side p {
+        max-width: 340px;
+        margin: 20px auto 0;
+    }
 
-            h1 {
-                font-size: clamp(2rem, 8vw, 3rem);
-                line-height: 1.15;
-                overflow-wrap: break-word;
-            }
+    .letter-paper {
+        width: 100%;
+        transform: none;
+    }
 
-            h2 {
-                font-size: clamp(1.6rem, 6vw, 2.3rem);
-                line-height: 1.2;
-            }
+    /* Opening */
+    .opening {
+        min-height: 500px;
+        padding: 76px 0 70px;
+    }
 
-            h3 {
-                font-size: clamp(1.2rem, 5vw, 1.6rem);
-            }
+    .opening h2 {
+        font-size: clamp(42px, 10vw, 66px);
+        line-height: 1;
+        margin-top: 25px;
+    }
 
-            p {
-                font-size: 15px;
-                line-height: 1.75;
-                overflow-wrap: break-word;
-            }
+    .opening-description {
+        max-width: 440px;
+        padding: 0 4px;
+        margin-top: 24px;
+        line-height: 1.9;
+    }
 
-            button,
-            a {
-                -webkit-tap-highlight-color: transparent;
-                touch-action: manipulation;
-            }
+    .down-button {
+        margin-top: 42px;
+    }
 
-            /* Images */
-            img {
-                max-width: 100%;
-            }
+    /* Section spacing */
+    .letter-section,
+    .appreciation,
+    .memory-section,
+    .final-section {
+        padding: 82px 0;
+    }
 
-            /* Flexible layouts */
-            .row {
-                margin-left: 0;
-                margin-right: 0;
-            }
+    .appreciation h2,
+    .memory-section h2,
+    .final-section h2 {
+        font-size: clamp(39px, 8.5vw, 62px);
+    }
 
-            /* Prevent oversized content */
-            .card,
-            .content,
-            .section-content {
-                max-width: 100%;
-            }
+    .appreciation-text {
+        font-size: 13px;
+        line-height: 2;
+    }
 
-            /* Navigation */
-            .navbar {
-                padding: 12px 0;
-            }
+    /* Memory photo */
+    .photo-stage {
+        width: min(100%, 500px);
+        margin: 48px auto 0;
+        padding: 11px;
+    }
 
-            .navbar-collapse {
-                padding-top: 12px;
-            }
+    .photo-image {
+        height: clamp(230px, 68vw, 340px);
+    }
 
-            .navbar-nav {
-                gap: 8px;
-            }
+    /* Final section */
+    .final-section p br {
+        display: none;
+    }
 
-            /* Buttons */
-            .btn {
-                min-height: 44px;
-                padding: 11px 18px;
-            }
+    .intro-content {
+        width: 100%;
+        max-width: 560px;
+    }
 
-            /* Cards */
-            .card {
-                margin-bottom: 18px;
-            }
+    .intro-content h1 {
+        font-size: clamp(43px, 10vw, 70px);
+    }
 
-            /* Music player */
-            .music-orb-widget {
-                right: max(16px, env(safe-area-inset-right));
-                bottom: max(20px, env(safe-area-inset-bottom));
-                z-index: 99999;
-            }
+    .intro-label {
+        letter-spacing: 3px;
+        line-height: 1.8;
+    }
 
-            .music-orb {
-                width: 54px;
-                height: 54px;
-            }
+    .intro-description {
+        line-height: 1.9;
+    }
 
-            .orb-ring {
-                width: 67px;
-                height: 67px;
-            }
+    .intro-button,
+    .last-button {
+        min-height: 48px;
+        padding: 15px 22px;
+    }
 
-            .orb-hint {
-                right: 64px;
-                font-size: 12px;
-            }
+    /* Birthday reveal */
+    #birthday {
+        overflow-y: auto;
+        justify-content: center;
+        padding:
+            max(28px, env(safe-area-inset-top))
+            22px
+            max(28px, env(safe-area-inset-bottom));
+    }
 
-            .orb-player {
-                width: min(260px, calc(100vw - 32px));
-                right: 0;
-                bottom: 78px;
-                padding: 24px 20px 20px;
-            }
-        }
+    #birthday h1 {
+        font-size: clamp(48px, 11vw, 76px);
+        line-height: 1;
+        margin-top: 25px;
+    }
 
-        /* Small iPhones */
-        @media screen and (max-width: 480px) {
+    .birthday-message {
+        max-width: 460px;
+        font-size: 13px;
+        line-height: 2;
+        margin-top: 25px;
+    }
 
-            .container,
-            .container-fluid {
-                padding-left: 16px;
-                padding-right: 16px;
-            }
+    .back-button {
+        margin-top: 30px;
+        min-height: 44px;
+    }
 
-            h1 {
-                font-size: clamp(1.85rem, 9vw, 2.5rem);
-            }
+    /* Music player */
+    .music-orb-widget {
+        left: max(14px, env(safe-area-inset-left));
+        right: auto;
+        bottom: max(14px, env(safe-area-inset-bottom));
+        z-index: 99999;
+    }
 
-            h2 {
-                font-size: clamp(1.45rem, 7vw, 2rem);
-            }
+    /* Prevent the hint from covering headings */
+    .orb-hint {
+        display: none;
+    }
 
-            p {
-                font-size: 14px;
-                line-height: 1.7;
-            }
+    .music-orb {
+        width: 48px;
+        height: 48px;
+    }
 
-            section {
-                padding-top: 55px;
-                padding-bottom: 55px;
-            }
+    .orb-ring {
+        width: 60px;
+        height: 60px;
+    }
 
-            .music-orb-widget {
-                right: 15px;
-                bottom: max(18px, env(safe-area-inset-bottom));
-            }
+    .orb-symbol {
+        font-size: 24px;
+    }
 
-            .orb-hint {
-                font-size: 11px;
-            }
-        }
+    .orb-player {
+        width: min(260px, calc(100vw - 28px));
+        left: 0;
+        right: auto;
+        bottom: 70px;
+        padding: 23px 19px 19px;
+        transform-origin: bottom left;
+    }
+}
 
-        /* Very small screens */
-        @media screen and (max-width: 360px) {
 
-            .container,
-            .container-fluid {
-                padding-left: 13px;
-                padding-right: 13px;
-            }
+/* =========================================
+   SMALL PHONES — iPhone & Android
+========================================= */
 
-            .orb-hint {
-                font-size: 10px;
-                right: 60px;
-            }
+@media (max-width: 480px) {
 
-            .orb-player {
-                width: calc(100vw - 26px);
-            }
-        }
+    .container {
+        width: calc(100% - 36px);
+    }
 
-        /* iPhone notch and home indicator support */
-        @supports (padding: env(safe-area-inset-bottom)) {
-            body {
-                padding-bottom: env(safe-area-inset-bottom);
-            }
-        }
+    /* Header */
+    .topbar {
+        height: 64px;
+    }
 
-        /* Respect reduced-motion settings */
-        @media (prefers-reduced-motion: reduce) {
+    .brand {
+        font-size: 22px;
+    }
 
-            *,
-            *::before,
-            *::after {
-                scroll-behavior: auto !important;
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
+    .topbar-note {
+        font-size: 7px;
+        letter-spacing: 1.2px;
+    }
+
+    /* Opening */
+    .opening {
+        min-height: 475px;
+        padding: 68px 0 62px;
+    }
+
+    .small-label {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .opening h2 {
+        font-size: clamp(39px, 10.2vw, 48px);
+        line-height: 1;
+    }
+
+    .opening-description {
+        font-size: 12px;
+        line-height: 2;
+    }
+
+    /* Sections */
+    .letter-section,
+    .appreciation,
+    .memory-section,
+    .final-section {
+        padding: 72px 0;
+    }
+
+    /* Letter heading */
+    .letter-layout {
+        gap: 30px;
+    }
+
+    .letter-side h2 {
+        font-size: clamp(37px, 9.5vw, 46px);
+        line-height: 1.02;
+        margin-top: 20px;
+    }
+
+    .letter-side p {
+        font-size: 11px;
+        margin-top: 16px;
+    }
+
+    /* Letter paper */
+    .letter-paper {
+        padding: 32px 25px 28px 30px;
+    }
+
+    .letter-paper::before {
+        left: 15px;
+    }
+
+    .letter-date {
+        margin-bottom: 28px;
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .letter-paper h3 {
+        font-size: 29px;
+        margin-bottom: 20px;
+    }
+
+    .letter-paper p {
+        font-size: 12px;
+        line-height: 2;
+        margin-bottom: 18px;
+    }
+
+    .letter-paper .signature {
+        font-size: 27px;
+    }
+
+    .letter-paper .signature-note {
+        font-size: 9px;
+        line-height: 1.8;
+    }
+
+    /* Appreciation, memory and final headings */
+    .appreciation h2,
+    .memory-section h2,
+    .final-section h2 {
+        font-size: clamp(36px, 8.8vw, 45px);
+        line-height: 1.08;
+    }
+
+    .appreciation-text,
+    .memory-description,
+    .final-section p {
+        font-size: 12px;
+        line-height: 2;
+    }
+
+    .appreciation-mark {
+        font-size: 70px;
+        margin-top: 45px;
+    }
+
+    /* Photo */
+    .photo-stage {
+        padding: 9px;
+        margin-top: 38px;
+    }
+
+    .photo-image {
+        height: clamp(220px, 72vw, 290px);
+    }
+
+    .photo-caption {
+        font-size: 23px;
+    }
+
+    .photo-bottom-note {
+        font-size: 10px;
+        padding: 0 12px;
+    }
+
+    /* Final button */
+    .last-button {
+        max-width: 100%;
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 28px 12px;
+        font-size: 9px;
+    }
+
+    /* Birthday reveal */
+    #birthday h1 {
+        font-size: clamp(44px, 11vw, 58px);
+    }
+
+    .birthday-small {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .birthday-message {
+        font-size: 12px;
+        line-height: 1.9;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 360px) {
+
+    .container {
+        width: calc(100% - 28px);
+    }
+
+    .topbar-note {
+        font-size: 6px;
+        letter-spacing: 1px;
+    }
+
+    .opening h2 {
+        font-size: 37px;
+    }
+
+    .letter-side h2 {
+        font-size: 36px;
+    }
+
+    .letter-paper {
+        padding-right: 20px;
+    }
+
+    .orb-player {
+        width: calc(100vw - 28px);
+    }
+}
+
+
+/* =========================================
+   IPHONE SAFE AREA SUPPORT
+========================================= */
+
+@supports (padding: env(safe-area-inset-bottom)) {
+
+    .music-orb-widget {
+        bottom: max(14px, env(safe-area-inset-bottom));
+    }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
     </style>
 </head>
 
@@ -1656,7 +1865,7 @@
 
 
         <footer>
-            MADE WITH <span>CARE</span> · JUST FOR YOU
+            MADE WITH <span>CARE</span> · A GIFT FROM ME
         </footer>
 
     </main>
@@ -1725,8 +1934,8 @@
 
             <span class="orb-overline">A LITTLE MUSIC FOR YOU</span>
 
-            <div class="orb-song-title">I Was Never There</div>
-            <div class="orb-song-subtitle">- By 'The Weeknd' ✦</div>
+            <div class="orb-song-title">Play This Music</div>
+            <div class="orb-song-subtitle">I Think You Will Like It ✦</div>
 
             <div class="orb-progress">
                 <span></span>
