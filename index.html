@@ -1109,6 +1109,240 @@
                 animation: none !important;
             }
         }
+
+
+        /* =========================================
+   IPHONE & MOBILE RESPONSIVE FIX
+   Add this at the VERY END of your CSS
+========================================= */
+
+        /* Prevent unwanted horizontal scrolling */
+        html,
+        body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: clip;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        img,
+        video,
+        iframe {
+            max-width: 100%;
+        }
+
+        img {
+            height: auto;
+        }
+
+        /* Tablet and mobile */
+        @media screen and (max-width: 768px) {
+
+            html {
+                scroll-behavior: smooth;
+                -webkit-text-size-adjust: 100%;
+            }
+
+            body {
+                width: 100%;
+                min-width: 320px;
+                overflow-x: clip;
+            }
+
+            section,
+            header,
+            footer,
+            main {
+                max-width: 100%;
+            }
+
+            .container,
+            .container-fluid {
+                width: 100%;
+                max-width: 100%;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            h1 {
+                font-size: clamp(2rem, 8vw, 3rem);
+                line-height: 1.15;
+                overflow-wrap: break-word;
+            }
+
+            h2 {
+                font-size: clamp(1.6rem, 6vw, 2.3rem);
+                line-height: 1.2;
+            }
+
+            h3 {
+                font-size: clamp(1.2rem, 5vw, 1.6rem);
+            }
+
+            p {
+                font-size: 15px;
+                line-height: 1.75;
+                overflow-wrap: break-word;
+            }
+
+            button,
+            a {
+                -webkit-tap-highlight-color: transparent;
+                touch-action: manipulation;
+            }
+
+            /* Images */
+            img {
+                max-width: 100%;
+            }
+
+            /* Flexible layouts */
+            .row {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            /* Prevent oversized content */
+            .card,
+            .content,
+            .section-content {
+                max-width: 100%;
+            }
+
+            /* Navigation */
+            .navbar {
+                padding: 12px 0;
+            }
+
+            .navbar-collapse {
+                padding-top: 12px;
+            }
+
+            .navbar-nav {
+                gap: 8px;
+            }
+
+            /* Buttons */
+            .btn {
+                min-height: 44px;
+                padding: 11px 18px;
+            }
+
+            /* Cards */
+            .card {
+                margin-bottom: 18px;
+            }
+
+            /* Music player */
+            .music-orb-widget {
+                right: max(16px, env(safe-area-inset-right));
+                bottom: max(20px, env(safe-area-inset-bottom));
+                z-index: 99999;
+            }
+
+            .music-orb {
+                width: 54px;
+                height: 54px;
+            }
+
+            .orb-ring {
+                width: 67px;
+                height: 67px;
+            }
+
+            .orb-hint {
+                right: 64px;
+                font-size: 12px;
+            }
+
+            .orb-player {
+                width: min(260px, calc(100vw - 32px));
+                right: 0;
+                bottom: 78px;
+                padding: 24px 20px 20px;
+            }
+        }
+
+        /* Small iPhones */
+        @media screen and (max-width: 480px) {
+
+            .container,
+            .container-fluid {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            h1 {
+                font-size: clamp(1.85rem, 9vw, 2.5rem);
+            }
+
+            h2 {
+                font-size: clamp(1.45rem, 7vw, 2rem);
+            }
+
+            p {
+                font-size: 14px;
+                line-height: 1.7;
+            }
+
+            section {
+                padding-top: 55px;
+                padding-bottom: 55px;
+            }
+
+            .music-orb-widget {
+                right: 15px;
+                bottom: max(18px, env(safe-area-inset-bottom));
+            }
+
+            .orb-hint {
+                font-size: 11px;
+            }
+        }
+
+        /* Very small screens */
+        @media screen and (max-width: 360px) {
+
+            .container,
+            .container-fluid {
+                padding-left: 13px;
+                padding-right: 13px;
+            }
+
+            .orb-hint {
+                font-size: 10px;
+                right: 60px;
+            }
+
+            .orb-player {
+                width: calc(100vw - 26px);
+            }
+        }
+
+        /* iPhone notch and home indicator support */
+        @supports (padding: env(safe-area-inset-bottom)) {
+            body {
+                padding-bottom: env(safe-area-inset-bottom);
+            }
+        }
+
+        /* Respect reduced-motion settings */
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
     </style>
 </head>
 
@@ -1506,7 +1740,9 @@
         </div>
 
         <audio id="orbAudio" loop preload="none">
-            <source src="images/AudioTranscriberAI_The Weeknd - I Was Never There feat. Gesaffelstein (Official Audio).mp3" type="audio/mpeg">
+            <source
+                src="images/AudioTranscriberAI_The Weeknd - I Was Never There feat. Gesaffelstein (Official Audio).mp3"
+                type="audio/mpeg">
         </audio>
 
     </div>
